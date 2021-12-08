@@ -1,0 +1,16 @@
+{
+  "name": "tradingbot",
+  "version": "1.0.0",
+  "description": "bot demo trading ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "utpal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "mongodb": "^4.2.0",
+    "node-cron": "^3.0.0"
+  }
+}
