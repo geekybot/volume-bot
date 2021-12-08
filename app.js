@@ -9,7 +9,7 @@ async function getTickers() {
     if (dataArray.length > 0) {
         dataArray.forEach(async element => {
             let formatArray = element.split('|');
-            if (parseInt(formatArray[1]) % 1 == 0) {
+            if (parseInt(formatArray[1]) % 3 == 0 || parseInt(formatArray[1]) % 5 == 0) {
                 if (parseFloat(formatArray[6]) > 0) {
                     // console.log(formatArray);
                     //check for db entry
