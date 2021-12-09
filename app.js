@@ -9,7 +9,7 @@ async function getTickers() {
     if (dataArray.length > 0) {
         dataArray.forEach(async element => {
             let formatArray = element.split('|');
-            if (parseInt(formatArray[1]) % 3 == 0 || parseInt(formatArray[1]) % 5 == 0) {
+            if (parseInt(formatArray[1]) == 5) {
                 if (parseFloat(formatArray[6]) > 0) {
                     // console.log(formatArray);
                     //check for db entry
@@ -22,7 +22,8 @@ async function getTickers() {
                         cgprice = cgprice.data;                        
                         // console.log(cgprice);
                         // console.log(cgprice[entry[0]].usd_24h_change);
-                        if (cgprice[entry[0]].usd_24h_change < 50 && cgprice[entry[0]].usd_24h_change > 0){
+                        // && cgprice[entry[0]].usd_24h_change > 0
+                        if (cgprice[entry[0]].usd_24h_change < 20 ){
                             db.buyEntry(entry[0], cgprice[entry[0]].usd, (100/cgprice[entry[0]].usd).toFixed(4));
                             console.log("buying " + entry[0]);
                         }
